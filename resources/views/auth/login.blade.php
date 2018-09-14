@@ -18,11 +18,7 @@
                 <div class="panel-heading">Login</div>
 
                 <div class="panel-body">
-                    <a href="{{ route('login.google') }}" >
-<button class="loginBtn loginBtn--google">
-    
-  Ingresar con Google
-</a></button>
+
 
                       
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">

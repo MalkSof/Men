@@ -30,13 +30,8 @@
     <div class="page-content read container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <?php echo $id; ?>
-                <form method="post" action="{{ route('puntos.com') }}" >
-                    {{ csrf_field()}}
-                    <input type="hidden" name="{{ $id }}">
-                    <button type="submit" class="btn btn-primary">Primary</button>
-
-                </form>
+                
+               
 
                 <div class="panel panel-bordered" style="padding-bottom:5px;">
                     <!-- form start -->
