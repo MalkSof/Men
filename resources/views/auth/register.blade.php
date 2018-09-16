@@ -64,11 +64,11 @@
                             <label for="surnamepather" >Nombre y Apellido de su padre</label>
 
                             
-                                <input id="surnamepather" type="text" class="form-control" name="surnamepather" value="{{ old('surnamemother') }}" required autofocus>
+                                <input id="surnamepather" type="text" class="form-control" name="surnamepather" value="{{ old('surnamepather') }}" required autofocus>
 
-                                @if ($errors->has('surnamemother'))
+                                @if ($errors->has('surnamepather'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('surnamemother') }}</strong>
+                                        <strong>{{ $errors->first('surnamepather') }}</strong>
                                     </span>
                                 @endif
                             

@@ -15,7 +15,8 @@ use App\Mail\PedidoHecho;
 
 Route::post('/admin/puntos', 'PuntosController@com')->name('puntos.com');
 
-
+Route::get('/pedidoshoy', 'PrintController@index');
+Route::get('/prnpreview', 'PrintController@prnpreview');
 
 
 Route::get('/', 'LandingPageController@index')->name('landing-page');

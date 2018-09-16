@@ -104,7 +104,7 @@
   </div>
 
     <div >
-<input value="Confirmar"  type="submit" class="btn btn-primary btn-lg"></input>
+<input value="Confirmar conmpra"  type="submit" class="btn btn-primary btn-lg"></input>
 
 </div>
 

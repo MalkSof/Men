@@ -20,6 +20,48 @@
             <div class="col-md-12">
 
                 <div class="panel panel-bordered">
+                    <ul style="margin-bottom: 10px" >
+                       
+
+                      
+                                <?php 
+
+           
+
+                                
+                                foreach($comidas as $comida)
+                                {
+                                    ?>
+                               
+
+                                <li >
+                                    
+                                    
+                                     <div>Nombre Comida <?php echo $comida->nombre ?></div>
+                                      <div>Precio: $<?php echo $comida->precio?></div>
+                                       <div>Cantidad <?php echo $comida->cantidad ?></div>
+                                       <div>Instrucciones <?php echo $comida->instrucciones ?></div>
+
+                                       <ul>
+                                           <?php
+                                           $ingrediente = DB::table('ped_com_in')
+            ->join('pedido_producto', 'ped_com_in.pedcom_id', '=', 'pedido_producto.id')
+            ->join('ingredientes', 'ped_com_in.ingrediente_id', '=', 'ingredientes.id')
+            ->select('ped_com_in.*', 'ingredientes.nombre as ingnom')->where('ped_com_in.pedcom_id', $comida->id)->get(); 
+                                    foreach ($ingrediente as $ing) {
+                                        # code...
+                                        echo $ing->ingnom . '<br>';
+                                        
+                                    }
+            ?>
+                                       </ul>
+                                </li>
+
+                               <?php
+                                         }
+                                ?>
+
+                            </ul>
                     <!-- form start -->
                     <form role="form"
                             class="form-edit-add"

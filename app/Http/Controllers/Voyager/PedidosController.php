@@ -217,8 +217,12 @@ class PedidosController extends VoyagerBaseController
         if (view()->exists("voyager::$slug.edit-add")) {
             $view = "voyager::$slug.edit-add";
         }
+         $comidas = DB::table('pedido_producto')
+            ->join('pedidos', 'pedido_producto.pedido_id', '=', 'pedidos.id')
+            ->join('comidas', 'pedido_producto.comida_id', '=', 'comidas.id')
+            ->select('pedido_producto.*', 'comidas.nombre','comidas.precio')->where('pedido_producto.pedido_id', $id)->get();
 
-        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable','comidas'));
     }
 
     // POST BR(E)AD
